@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Plant Leaf Disease Doctor</title>
+    <style>
+        /* Basic styling for the entire page */
+        body {
+            margin: 0;
+            display: flex; /* Use flexbox to center the phone frame */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Make sure it takes full viewport height for centering */
+            background-color: #e0e0e0; /* Light grey background outside the phone */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden; /* Prevent body scroll if frame is scaled down */
+        }
+
+        /* The main phone body/frame */
+        .phone-frame {
+            /* Set fixed internal dimensions for the app to render within */
+            /* Using a common iPhone X/XS/11 Pro logical resolution */
+            width: 375px;  
+            height: 812px; 
+            
+            /* These max-width/height and aspect-ratio ensure it scales down 
+               responsively if the browser window is too small, maintaining proportions. */
+            max-width: 99vw; 
+            max-height: 98vh; 
+            aspect-ratio: 375 / 812; /* Keep aspect ratio to prevent distortion */
+            
+            /* Original styles (keep these) */
+            background-color: white; /* The "screen" background before app loads */
+            border: 8px solid black; /* Outer border of the phone */
+            border-radius: 40px; /* Rounded corners for the phone body */
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+            position: relative; /* For positioning internal elements like notch/button */
+            overflow: hidden; /* CRUCIAL: Ensures your app content stays within the frame */
+            display: flex; /* Allows app content to stack nicely */
+            flex-direction: column; /* Stacks children (like your app) vertically */
+        }
+
+        /* Mock iPhone-like notch (this is already handled in your React Native app) */
+        .phone-frame::before {
+            content: none; /* Remove the notch from the HTML frame, handled by RN */
+        }
+
+        /* Mock home button (this is already handled in your React Native app for iPhone X style) */
+        .phone-frame::after {
+            content: none; /* Remove the home button from the HTML frame, handled by RN */
+        }
+
+        /* This is the div where your React Native app will be mounted */
+        #root {
+            flex: 1; /* Makes the React Native app fill the available space within the frame */
+            width: 100%;
+            height: 100%; /* Essential to make the React Native app respect the frame's dimensions */
+            display: flex; /* To allow its children (like StatusBarMock) to stack vertically */
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="phone-frame">
+        <div id="root"></div> 
+    </div>
+</body>
+</html>

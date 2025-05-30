@@ -1,0 +1,64 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native (for potential future native builds or if any of these are generated)
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# Python/Flask Backend Additions
+__pycache__/
+*.pyc
+*.pyo
+.Python
+env/                 # Standard virtual environment directory
+venv/                # Another common virtual environment directory
+lib/                 # Common in virtual envs
+lib64/               # Common in virtual envs
+bin/                 # Common in virtual envs
+include/             # Common in virtual envs
+share/               # Common in virtual envs
+pip-log.txt
+pip-delete-this-arg.txt
+.env                 # Main .env file for environment variables
+.flaskenv            # Flask specific environment file
+instance/            # Flask instance folder for config or data
+.pytest_cache/       # pytest temporary files
+.coverage            # Coverage report files
+.ipynb_checkpoints/  # Jupyter Notebook checkpoints (if you use notebooks for training)
+htmlcov/             # html coverage reports
+.nox/                # nox temporary directories
+.tox/                # tox temporary directories
+
+# Ignore virtual environment directory
+backend/venv/
